@@ -1,1 +1,2 @@
 # newsletterCMS
+author: Lucas Matos

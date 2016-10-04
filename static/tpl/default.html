@@ -1,0 +1,510 @@
+<background style="background-color: #ccc;"  url-path="{{data | getData: 'backgroundImage'}}"></background>
+
+<div ng-show="'{{data | getData: 'section'}}'=='main'" layout="row" layout-xs="column" layout-lg="row" layout-gt-lg="row" layout-xl="row" class="gridListdemoBasicUsage" >
+<spacer></spacer>
+  <div flex class="gray" layout="column">
+    
+      
+      <div class="gridListdemoBasicUsage" >
+        <md-grid-list 
+                      md-cols-xs="1" 
+                      md-cols-sm="1" 
+                      md-cols-md="3" 
+                      md-cols-lg="4" 
+                      md-cols-gt-lg="5" 
+                      
+                      md-row-height="{{ config | getData: 'LayoutGridListRowHeight'}}"
+                      
+                      md-gutter-xs="2px"
+                      md-gutter-sm="4px"
+                      md-gutter-md="6px"
+                      md-gutter-lg="8px"
+                      md-gutter-gt-lg="10px">
+
+    
+    <md-grid-tile style="background-color: {{  config | getData: 'LayoutGridTileHeaderBackgroundColor'}}"  
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="3" 
+                  md-colspan-lg="4" 
+                  md-colspan-gt-lg="5"
+                  md-rowspan="1" >   
+     <div  flex layout="column"   layout-align="space-between stretch" 
+          style="border-color:  {{  config | getData: 'LayoutGridTileHeaderBorderColor'}}; 
+                                      border-style:  {{  config | getData: 'LayoutGridTileHeaderBorderStyle'}}; 
+                                      border-width: 1px; width: 100%; height: 100%;">
+        <div flex="60" layout="column">
+            <div flex="100" layout="row" layout-align="center center">
+                
+                <div style="width: 340px; height: 200px;
+                        background-image: url({{  config | getData: 'logo1'}}  );
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: contain;"></div>
+            
+               
+            </div>
+        <div flex  layout="row">      
+            <a ng-href="#" class="headerText">{{config | getData: 'headerTitle'}}</a>
+        </div>
+                
+        </div>
+     
+ <div flex layout="row" layout-align="space-between end">
+    <md-button ng-href="#/" class="subheader md-raised md-primary">  {{data | getData: 'MainTitle'}} </md-button>
+     
+      <md-button class="md-fab md-mini md-primary" aria-label="Menu" ng-click="showMenu($event)"  >
+            <md-tooltip md-direction="bottom">
+                Menu
+            </md-tooltip>
+           <md-icon md-svg-icon="menu"></md-icon>
+		</md-button>
+    </div>
+        </div>
+    </md-grid-tile>
+            
+    <md-grid-tile style="background-color: {{  config | getData: 'LayoutGridTile1BackgroundColor'}};" 
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="3" 
+                  md-colspan-lg="4" 
+                  md-colspan-gt-lg="5"
+                  md-rowspan="1">     
+         <md-whiteframe class="md-whiteframe-2dp"  flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTile1BorderColor'}} 
+                                          border-style: {{  config | getData: 'LayoutGridTile1BorderStyle'}}   
+                                          border-width: 1px; width: 100%; height: 100%;">
+             <responsive-text text="{{data | getData: 'headerText'}}"></responsive-text>
+        </md-whiteframe>
+    </md-grid-tile>
+    
+       <md-grid-tile  style="background-color:  {{  config | getData: 'LayoutGridTile2BackgroundColor'}};"  
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="2" 
+                  md-colspan-lg="2" 
+                  md-colspan-gt-lg="1"
+                  
+                  md-rowspan-xs="1"
+                  md-rowspan-sm="1"
+                  md-rowspan-md="1" 
+                  md-rowspan-lg="1" 
+                  md-rowspan-gt-lg="2">
+           <md-whiteframe class="md-whiteframe-2dp"  flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTile2BorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTile2BorderStyle'}};   
+                                          border-width: 1px; width: 100%; height: 100%;">
+         <responsive-image url-path="{{data | getData: 'Image1'}}"
+                         alt="Topic 4 Image"
+                        ></responsive-image>
+           </md-whiteframe>
+    </md-grid-tile>
+            
+    <md-grid-tile style="background-color: {{  config | getData: 'LayoutGridTile3BackgroundColor'}};"  
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="1" 
+                  md-colspan-lg="1" 
+                  md-colspan-gt-lg="1"
+                  
+                  md-rowspan-xs="2"
+                  md-rowspan-sm="2"
+                  md-rowspan-md="3" 
+                  md-rowspan-lg="3" 
+                  md-rowspan-gt-lg="3">
+       
+        <md-whiteframe class="md-whiteframe-2dp" flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTile3BorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTile3BorderStyle'}};   
+                                          border-width: 1px; width: 100%; height: 100%;">
+<responsive-square url-path="{{data | getData: 'Topic1Image'}}"
+                         alt="Topic 1 Image"
+                         section="{{ data | getData: 'Topic1Link'}}"
+                         title="{{ data | getData: 'Topic1Title'}}"
+                         text="{{ data | getData: 'Topic1P'}}"></responsive-square>  
+        </md-whiteframe>
+              
+       
+    </md-grid-tile>
+
+    <md-grid-tile style="background-color:  {{  config | getData: 'LayoutGridTile4BackgroundColor'}};" 
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="1" 
+                  md-colspan-lg="1" 
+                  md-colspan-gt-lg="1"
+                  
+                  md-rowspan-xs="2"
+                  md-rowspan-sm="2"
+                  md-rowspan-md="3" 
+                  md-rowspan-lg="3" 
+                  md-rowspan-gt-lg="3">
+        
+              
+        <md-whiteframe class="md-whiteframe-2dp"  flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTile4BorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTile4BorderStyle'}};   
+                                          border-width: 1px; width: 100%; height: 100%;">
+       <responsive-square url-path="{{data | getData: 'Topic2Image'}}"
+                         alt="Topic 2 Image"
+                         section="{{ data | getData: 'Topic2Link'}}"
+                         title="{{ data | getData: 'Topic2Title'}}"
+                         text="{{ data | getData: 'Topic2P'}}"></responsive-square>    
+        </md-whiteframe>
+               
+        
+    </md-grid-tile>
+
+    <md-grid-tile style="background-color: {{  config | getData: 'LayoutGridTile5BackgroundColor'}};" 
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="1" 
+                  md-colspan-lg="2" 
+                  md-colspan-gt-lg="1"
+                  
+                  md-rowspan-xs="2"
+                  md-rowspan-sm="2"
+                  md-rowspan-md="3" 
+                  md-rowspan-lg="2" 
+                  md-rowspan-gt-lg="3">
+        <md-whiteframe class="md-whiteframe-2dp" flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTile5BorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTile5BorderStyle'}};   
+                                          border-width: 1px; width: 100%; height: 100%;">
+           <responsive-square url-path="{{data | getData: 'Topic3Image'}}"
+                         alt="Topic 3 Image"
+                         section="{{ data | getData: 'Topic3Link'}}"
+                         title="{{ data | getData: 'Topic3Title'}}"
+                         text="{{ data | getData: 'Topic3P'}}"></responsive-square>   
+        </md-whiteframe>
+    </md-grid-tile>
+            
+ <md-grid-tile style="background-color: {{  config | getData: 'LayoutGridTile6BackgroundColor'}};"  
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="1" 
+                  md-colspan-lg="2" 
+                  md-colspan-gt-lg="1"
+                  
+                  md-rowspan-xs="1"
+                  md-rowspan-sm="1"
+                  md-rowspan-md="4" 
+                  md-rowspan-lg="1" 
+                  md-rowspan-gt-lg="2">
+      <md-whiteframe class="md-whiteframe-2dp"  flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTile6BorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTile6BorderStyle'}};   
+                                          border-width: 1px; width: 100%; height: 100%;">
+         <responsive-image url-path="{{data | getData: 'Image2'}}"
+                         alt="Image2"
+                        ></responsive-image>
+     </md-whiteframe>
+    </md-grid-tile>
+    <md-grid-tile style="background-color: {{  config | getData: 'LayoutGridTile7BackgroundColor'}};"   
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="1" 
+                  md-colspan-lg="1" 
+                  md-colspan-gt-lg="1"
+                  
+                  md-rowspan-xs="2"
+                  md-rowspan-sm="2"
+                  md-rowspan-md="3" 
+                  md-rowspan-lg="3" 
+                  md-rowspan-gt-lg="3">
+        <md-whiteframe class="md-whiteframe-2dp"  flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTile7BorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTile7BorderStyle'}};   
+                                          border-width: 1px; width: 100%; height: 100%;">
+         <responsive-square 
+                         alt="Topic 5 Image"
+                        section="{{ data | getData: 'Topic5Link'}}"
+                         title="{{ data | getData: 'Topic5Title'}}"
+                         text="{{ data | getData: 'Topic5P'}}"></responsive-square>    
+        </md-whiteframe>
+    </md-grid-tile>
+            
+   
+
+    <md-grid-tile style="background-color: {{  config | getData: 'LayoutGridTile8BackgroundColor'}};"   
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="1" 
+                  md-colspan-lg="1" 
+                  md-colspan-gt-lg="1"
+                  
+                  md-rowspan-xs="2"
+                  md-rowspan-sm="2"
+                  md-rowspan-md="3" 
+                  md-rowspan-lg="3" 
+                  md-rowspan-gt-lg="3">
+        <md-whiteframe class="md-whiteframe-2dp"  flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTile8BorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTile8BorderStyle'}};   
+                                          border-width: 1px; width: 100%; height: 100%;">
+           <responsive-square url-path="{{data | getData: 'Topic4Image'}}"
+                         alt="Topic 4 Image"
+                       section="{{ data | getData: 'Topic4Link'}}"
+                         title="{{ data | getData: 'Topic4Title'}}"
+                         text="{{ data | getData: 'Topic4P'}}"></responsive-square>   
+        </md-whiteframe>
+      
+    </md-grid-tile>
+
+    <md-grid-tile style="background-color:  {{  config | getData: 'LayoutGridTile9BackgroundColor'}};"  
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="1" 
+                  md-colspan-lg="2" 
+                  md-colspan-gt-lg="1"
+                  
+                  md-rowspan-xs="2"
+                  md-rowspan-sm="2"
+                  md-rowspan-md="2" 
+                  md-rowspan-lg="2" 
+                  md-rowspan-gt-lg="2">
+    <md-whiteframe class="md-whiteframe-2dp" flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTile9BorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTile9BorderStyle'}};   
+                                          border-width: 1px; width: 100%; height: 100%;">
+    <responsive-square url-path="{{data | getData: 'Topic6Image'}}"
+                         alt="Topic 6 Image"
+                        section="{{ data | getData: 'Topic6Link'}}"
+                         title="{{ data | getData: 'Topic6Title'}}"
+                         text="{{ data | getData: 'Topic6P'}}"></responsive-square> 
+        </md-whiteframe>
+    </md-grid-tile>
+     <md-grid-tile style="background-color: {{  config | getData: 'LayoutGridTile10BackgroundColor'}};"   
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="2" 
+                  md-colspan-lg="4" 
+                  md-colspan-gt-lg="2"
+                  
+                  md-rowspan-xs="2"
+                  md-rowspan-sm="2"
+                  md-rowspan-md="2" 
+                  md-rowspan-lg="1" 
+                  md-rowspan-gt-lg="2">
+         <md-whiteframe class="md-whiteframe-2dp"  flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTile10BorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTile10BorderStyle'}};   
+                                          border-width: 1px; width: 100%; height: 100%;">
+              <responsive-square url-path="{{data | getData: 'Topic7Image'}}"
+                         alt="Topic 7 Image"
+                        section="{{ data | getData: 'Topic7Link'}}"
+                         title="{{ data | getData: 'Topic7Title'}}"
+                         text="{{ data | getData: 'Topic7P'}}"></responsive-square> 
+         </md-whiteframe>
+    </md-grid-tile>
+            
+    <md-grid-tile style="background-color:  {{  config | getData: 'LayoutGridTileFooterBackgroundColor'}};"
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="3" 
+                  md-colspan-lg="4" 
+                  md-colspan-gt-lg="5"
+                  md-rowspan="1">     
+        <div flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTileFooterBorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTileFooterBorderStyle'}}; 
+                                          border-width: 1px; width: 100%; height: 100%;">
+            <responsive-text text="{{data | getData: 'footerText'}}"></responsive-text>
+            </div>
+    </md-grid-tile>
+
+    <md-grid-tile style="background-color:  {{  config | getData: 'LayoutGridTileFooterBackgroundColor'}};"
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="3" 
+                  md-colspan-lg="4" 
+                  md-colspan-gt-lg="5"
+                  md-rowspan="1">     
+         <div flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTileFooterBorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTileFooterBorderStyle'}}; 
+                                          border-width: 1px; width: 100%; height: 100%;">
+            
+        </div>
+    </md-grid-tile>
+            
+  </md-grid-list>
+</div>
+      
+      
+      
+  </div>
+<spacer></spacer>
+</div> 
+
+
+<div ng-show="'{{data | getData: 'section'}}'=='sub'" layout="row" layout-xs="column" layout-lg="row" layout-gt-lg="row" layout-xl="row" class="gridListdemoBasicUsage" >
+<spacer></spacer>
+  <div flex class="gray" layout="column">
+      
+      
+      <div class="gridListdemoBasicUsage" >
+        <md-grid-list 
+                     md-cols-xs="1" 
+                      md-cols-sm="1" 
+                      md-cols-md="3" 
+                      md-cols-lg="4" 
+                      md-cols-gt-lg="5" 
+                      
+                      md-row-height="{{ config | getData: 'LayoutGridListRowHeight'}}"
+                      
+                      md-gutter-xs="2px"
+                      md-gutter-sm="4px"
+                      md-gutter-md="6px"
+                      md-gutter-lg="8px"
+                      md-gutter-gt-lg="10px">
+
+    
+    <md-grid-tile style="background-color: {{  config | getData: 'LayoutGridTileHeaderBackgroundColor'}};"  
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="3" 
+                  md-colspan-lg="4" 
+                  md-colspan-gt-lg="5"
+                  md-rowspan="1" >     
+        <div flex layout="column"   layout-align="space-between stretch" 
+          style="border-color:  {{  config | getData: 'LayoutGridTileHeaderBorderColor'}}; 
+                                      border-style:  {{  config | getData: 'LayoutGridTileHeaderBorderStyle'}}; 
+                                      border-width: 1px; width: 100%; height: 100%;">
+        <div flex="60" layout="column">
+            <div flex="100" layout="row" layout-align="center center">
+                
+                <div style="width: 340px; height: 200px;
+                        background-image: url({{  config | getData: 'logo1'}}  );
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: contain;"></div>
+            
+               
+            </div>
+        <div flex  layout="row">
+           
+        </div>
+                
+        </div>
+     
+ <div flex layout="row" layout-align="space-between end">
+    <md-button ng-href="#/"  class="subheader md-raised md-primary">  {{data | getData: 'MainTitle'}} &nbsp; &rsaquo; &nbsp; {{data | getData: 'title'}} </md-button>
+     
+      <md-button class="md-fab md-mini md-primary" aria-label="Menu" ng-click="showMenu($event)"  >
+            <md-tooltip md-direction="bottom">
+                Menu
+            </md-tooltip>
+           <md-icon md-svg-icon="menu"></md-icon>
+		</md-button>
+    </div>
+        </div>
+    </md-grid-tile>     
+
+
+            
+    <md-grid-tile style="background-color:  {{  config | getData: 'LayoutGridTileProdHeaderBackgroundColor'}};" 
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="2" 
+                  md-colspan-lg="3" 
+                  md-colspan-gt-lg="4"
+                  
+                  md-rowspan-xs="3"
+                  md-rowspan-sm="3"
+                  md-rowspan-md="3" 
+                  md-rowspan-lg="3" 
+                  md-rowspan-gt-lg="3">
+    <md-whiteframe class="md-whiteframe-2dp"  flex layout="column" style="border-color:  {{  config | getData: 'LayoutGridTileProdHeaderBorderColor'}}; 
+                                      border-style:  {{  config | getData: 'LayoutGridTileProdHeaderBorderStyle'}}; 
+                                      border-width: 1px; width: 100%; height: 100%;">
+        <responsive-content-header url-path="{{data | getData: 'authorImage'}}"
+                                   title="{{ data | getData: 'subtitle'}}"
+                                   text="{{ data | getData: 'p1'}}"></responsive-content-header>
+        </md-whiteframe>
+    </md-grid-tile>
+    
+ <md-grid-tile style="background-color: {{  config | getData: 'LayoutGridTileProd1BackgroundColor'}};"  
+                md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="1" 
+                  md-colspan-lg="1" 
+                  md-colspan-gt-lg="1"
+                  
+                  md-rowspan-xs="1"
+                  md-rowspan-sm="1"
+                  md-rowspan-md="2" 
+                  md-rowspan-lg="2" 
+                  md-rowspan-gt-lg="2">
+        <md-whiteframe class="md-whiteframe-2dp"  flex layout="column" style="border-color:  {{  config | getData: 'LayoutGridTileProd1BorderColor'}}; 
+                                      border-style:  {{  config | getData: 'LayoutGridTileProd1BorderStyle'}}; 
+                                      border-width: 1px; width: 100%; height: 100%;">
+            <responsive-image url-path="{{data | getData: 'image'}}"
+                         alt="Image"
+                         text="{{ data | getData: 'p2'}}"></responsive-image>
+     </md-whiteframe>           
+               
+        
+    </md-grid-tile>
+    
+
+          
+
+
+
+    <md-grid-tile  style="background-color:  {{  config | getData: 'LayoutGridTileProd2BackgroundColor'}}; " 
+                   md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="1" 
+                  md-colspan-lg="1" 
+                  md-colspan-gt-lg="1"
+                  
+                  md-rowspan-xs="1"
+                  md-rowspan-sm="1"
+                  md-rowspan-md="2" 
+                  md-rowspan-lg="2" 
+                  md-rowspan-gt-lg="2">
+        <md-whiteframe class="md-whiteframe-2dp"  flex layout="column" style="border-color:  {{  config | getData: 'LayoutGridTileProd2BorderColor'}}; 
+                                      border-style:  {{  config | getData: 'LayoutGridTileProd2BorderStyle'}}; 
+                                      border-width: 1px; width: 100%; height: 100%;">
+    <responsive-text text="{{ data | getData: 'p2'}}"></responsive-text>  
+        </md-whiteframe>
+    </md-grid-tile>
+            
+               <md-grid-tile style="background-color: {{  config | getData: 'LayoutGridTile1BackgroundColor'}};" 
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="2" 
+                  md-colspan-lg="3" 
+                  md-colspan-gt-lg="4"
+                  md-rowspan="1">     
+        <md-whiteframe class="md-whiteframe-2dp"  flex layout="column" style="border-color:  {{  config | getData: 'LayoutGridTileProdHeaderBorderColor'}}; 
+                                      border-style:  {{  config | getData: 'LayoutGridTileProdHeaderBorderStyle'}}; 
+                                      border-width: 1px; width: 100%; height: 100%;">
+        <responsive-image url-path="{{data | getData: 'imageHeader'}}"
+                         alt="Image"></responsive-image>
+                   </md-whiteframe>
+    </md-grid-tile>
+      <md-grid-tile style="background-color:  {{  config | getData: 'LayoutGridTileFooterBackgroundColor'}};"
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="3" 
+                  md-colspan-lg="4" 
+                  md-colspan-gt-lg="5"
+                  md-rowspan="1">     
+         <div flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTileFooterBorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTileFooterBorderStyle'}};
+                                          border-width: 1px; width: 100%; height: 100%;">
+            <responsive-text text="{{data | getData: 'footerText'}}"></responsive-text>
+        </div>
+    </md-grid-tile>  
+     <md-grid-tile style="background-color:  {{  config | getData: 'LayoutGridTileFooterBackgroundColor'}};"
+                  md-colspan-xs="1"
+                  md-colspan-sm="1"
+                  md-colspan-md="3" 
+                  md-colspan-lg="4" 
+                  md-colspan-gt-lg="5"
+                  md-rowspan="1">     
+         <div flex layout="column" style="border-color: {{  config | getData: 'LayoutGridTileFooterBorderColor'}}; 
+                                          border-style: {{  config | getData: 'LayoutGridTileFooterBorderStyle'}};
+                                          border-width: 1px; width: 100%; height: 100%;">
+            
+        </div>
+    </md-grid-tile>  
+            
+  </md-grid-list>
+</div>
+      
+      
+      
+  </div>
+<spacer></spacer>
+</div>

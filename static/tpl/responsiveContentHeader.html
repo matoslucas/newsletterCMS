@@ -1,0 +1,22 @@
+<div  flex="100" layout="column" style="width: 100%; height: 100%; overflow: hidden;">
+    <div layout="row" layout-align="space-between center" style="width: 100%; height: 46px;text-align: center;">
+                
+        
+        
+        <div ng-if="url" style="background-image: url({{url}}); position: relative; z-index: 10;top:18px;left: 8px; border-radius: 50px;  width: 64px; height: 64px;">
+        </div>
+        <div flex="grow"><a class="btn" href="#"> {{title}}</a></div>
+               
+   
+    </div>
+    <div flex="grow" layout="column" style="background-color: transparent;
+                                                               text-align: justify;
+                                                               ">
+        <md-content  hide show-sm  flex layout-padding ng-bind-html="text" style="font-size: 16px; background-color: transparent;" ></md-content>
+        <md-content  hide show-md  flex layout-padding ng-bind-html="text" style="font-size: 14px; background-color: transparent;" ></md-content>
+        <md-content  hide show-lg  flex layout-padding ng-bind-html="text" style="font-size: 16px; background-color: transparent;" ></md-content>
+        <md-content  hide show-gt-lg  flex layout-padding ng-bind-html="text" style="font-size: 16px; background-color: transparent;" ></md-content>
+    </div>
+    
+      
+</div> 

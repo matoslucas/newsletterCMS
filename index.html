@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html ng-controller="AppCtrl" ng-cloak="" ng-app="MyApp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsletter Cognizant-Google</title>
+<link rel="shortcut icon" type="image/png" href="static/img/favicon.png"/>
+<link rel="shortcut icon" type="image/png" href="static/img/favicon.png"/>
+<link rel='stylesheet prefetch' href='//ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css' />
+
+<style>
+html, body { 
+    height: 100%;
+    margin:0px; 
+   
+    font-family: {{ config | getData:'cssFontFamily' }};
+    font-size: {{ config | getData:'cssFontSize' }};
+    background-color: {{ config | getData:'backgroundColor' }};
+}
+
+    .quote{
+        font-family: {{ config | getData:'cssFontQuote' }};
+        font-size: {{ config | getData:'cssFontSizeQuote' }};
+    }
+    .coverImage{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .headerText{
+        width: 100%;
+        justify-content:center;
+        align-items: center;
+        text-align: center;  
+        color: #333; 
+        font-size: 28px;
+        text-decoration: none;
+        
+    }
+    .subheader{
+        font-family: {{ config | getData:'cssFontSubTitle' }};
+        font-size: {{ config | getData:'cssFontSizeSubTitle' }}; 
+    }
+
+ .btn:link, .btn:visited {
+    font-family:  {{ config | getData:'cssFontFamilyBtn' }};
+    width: 100%;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-weight: 900; 
+    color: {{ config | getData:'cssColorBtn' }};
+    font-size: {{ config | getData:'cssFontSizeBtn' }};
+}
+    .der{
+        float: right;
+    }
+    .mas{
+      
+    }
+
+.btn:hover, a:active {
+    background-color: {{ config | getData:'cssBackgroundColorHoverBtn' }};
+    color: {{ config | getData:'cssColorHoverBtn' }};
+}
+.quoteimg{
+        width: 100%;
+        height: auto;
+    }
+.spotimg{
+    float: right;
+    border-radius: 50px;
+    width: 100px;
+    position: relative;
+    margin-left: 6px;
+    }    
+    .modal {
+        display: table;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #333;
+        opacity: .75;
+        z-index: 999;
+    }
+    #loading {
+        display: table-cell;
+        vertical-align: middle;
+        list-style: none;
+        text-align: center;
+        width: 400px;
+    }
+    
+    @keyframes loader{
+      50% { height: 6px; margin-top: 74px; opacity: .1; }
+    }
+
+    .bar {
+      height: 80px;
+      width: 6px;
+      border-radius: 3px;
+      background: #CCC;
+      display :inline-block;
+      margin: 0 2px;      
+      animation: loader 1.3s infinite;
+    }
+
+    .bar:nth-child(1) { animation-delay: .1s; }
+    .bar:nth-child(2) { animation-delay: .2s; }
+    .bar:nth-child(3) { animation-delay: .3s; }
+    .bar:nth-child(4) { animation-delay: .4s; }
+    .bar:nth-child(5) { animation-delay: .5s; }
+    .bar:nth-child(6) { animation-delay: .6s; }
+    .bar:nth-child(7) { animation-delay: .7s; }
+    .bar:nth-child(8) { animation-delay: .8s; }
+    .bar:nth-child(9) { animation-delay: .9s; }
+    .bar:nth-child(10) { animation-delay: 1s; }
+
+
+#bg{
+	background: url({{ config | getData:'backgroundImage' }}) no-repeat center center;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+    width:100%; height:100%;
+   	left:0px;
+   	top:0px;
+	position:fixed;
+}
+#footer{
+	position: absolute;
+    bottom:0px;	
+    width: 100%;
+    height: 20px;
+    background-color: rgba(224, 255, 255, 0.5); 
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+img {
+    width: 100%;
+    height: auto;
+}
+ 
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px; }
+
+.gridListdemoBasicUsage .gray {
+  background: #f5f5f5; }
+
+.gridListdemoBasicUsage .gray2 {
+  background: #333333; }
+
+.gridListdemoBasicUsage .green {
+  background: #b9f6ca; }
+
+.gridListdemoBasicUsage .yellow {
+  background: #ffff8d; }
+
+.gridListdemoBasicUsage .blue {
+  background: #84ffff; }
+
+.gridListdemoBasicUsage .purple {
+  background: #b388ff; }
+
+.gridListdemoBasicUsage .red {
+  background: #ff8a80; }
+
+.gridListdemoBasicUsage md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+    
+    #preloaderB{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        text-align: center;
+        background-color: rgba(0,0,0,.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+::-webkit-scrollbar{width:5px;height:5px}::-webkit-scrollbar-button{width:0;height:0}::-webkit-scrollbar-thumb{background:#e1e1e1;border:0 #fff;border-radius:50px}::-webkit-scrollbar-thumb:hover{background:#fff}::-webkit-scrollbar-thumb:active{background:#000}::-webkit-scrollbar-track{background:#666;border:0 #fff;border-radius:50px}::-webkit-scrollbar-track:hover{background:#666}::-webkit-scrollbar-track:active{background:#333}::-webkit-scrollbar-corner{background:0 0}
+    </style>
+</head>
+
+<body md-theme="{{ config | getData:'dynamicTheme' }}" md-theme-watch >
+    
+<div class="modal" ng-show="loadingView">
+    <ul id="loading">
+      <li class="bar" ng-repeat="i in [0,1,2,3,4,5,6,7,8,9]"></li>
+    </ul>
+</div>    
+    
+
+<div id="appcontainer"  layout="column" ng-cloak>
+    <ng-view ></ng-view>
+</div>   
+
+    <!--div id="footer" >power by Lucas Matos</div-->
+
+
+<script type="text/ng-template" id="image.html">
+<img src="{{value}}" flex> 
+</script>
+<script type="text/ng-template" id="span.html">
+<span>{{value}}</span> 
+</script>
+    
+<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js'></script>
+<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
+<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.min.js'></script>
+<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js'></script>
+<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
+<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js'></script>
+<script src='//ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js'></script>
+
+<script src="static/js/main.js" ></script>
+    
+
+</body>
+</html>

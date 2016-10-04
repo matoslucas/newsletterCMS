@@ -1,0 +1,18 @@
+<md-bottom-sheet class="md-grid" layout="column" ng-cloak>
+<div layout="row" layout-align="center center">
+<span>{{menuHeader}}</span>
+</div>
+<md-list flex layout="row" layout-align="center center">
+<md-list-item ng-repeat="item in items"> 
+    
+<md-button class="md-fab md-primary" ng-click="listItemClick(item.gsx$link.$t,item.gsx$target.$t)" >
+  		
+        <!--md-icon class="material-icons md-24"> {{item.gsx$icon.$t}} </md-icon-->    	
+		 <md-icon md-svg-icon="{{item.gsx$icon.$t}}"></md-icon>
+</md-button>
+
+<div class="md-grid-text"> {{ item.gsx$item.$t }} </div>
+
+</md-list-item>
+</md-list>
+</md-bottom-sheet>

@@ -1,0 +1,42 @@
+<div layout="column" style="width: 100%; height: 100%; margin-top: 1px; margin-left: 1px; margin-right: 1px; margin-bottom: 1px;" >
+    <md-button ng-if="section" ng-href="#/{{section}}/"  style="font-weight: 900;"> {{title}}</md-button>
+  <div layout="column" layout-align="center center" style="width: auto; height: auto; background-color: ghostwhite; overflow: hidden;">
+       
+   
+      
+      
+      <!--a style="display: block; width: 100%; text-align: center; position: relative;" ><span 
+                class="md-headline"></span> </a-->
+      
+      <div style="background-color: ghostwhite;
+    bottom: 1px;
+    top: 45px;
+    overflow: hidden;
+    position: absolute;
+    height: auto;
+    width: -webkit-calc(100% - 2px); 
+    width:    -moz-calc(100% - 2px); 
+    width:      -o-calc(100% - 2px);
+    text-align: justify;" layout="column" layout-align="center stretch"> 
+          
+        <div hide show-xs class="spot"  style="margin: 8px; font-size: 10px;" ng-bind-html="text"> </div>  
+        <div hide show-gt-xs class="spot"  style="margin: 8px; font-size: 11px;" ng-bind-html="text"> </div>
+        <div hide show-sm class="spot"  style="margin: 8px; font-size: 12px;" ng-bind-html="text"> </div> 
+        
+        <div hide show-md class="spot"  style="margin: 8px; font-size: 14px;" ng-bind-html="text"> </div> 
+        <div hide show-gt-md class="spot"  style="margin: 8px; font-size: 16px;" ng-bind-html="text"> </div> 
+        
+        <div hide how-gt-lg class="spot"  style="margin: 8px; font-size: 20px;" ng-bind-html="text"> </div>
+        <div hide show-xl class="spot"  style="margin: 8px; font-size: 22px;" ng-bind-html="text"> </div>
+    </div>
+
+      
+    
+  </div>
+ <a ng-href="#/{{section}}/">
+   <img hide show-gt-md src="{{ url }}" ng-if="url" style="width: -webkit-calc(100% - 2px); 
+    width:    -moz-calc(100% - 2px); 
+    width:      -o-calc(100% - 2px);
+                                               bottom: 1px; position: absolute;height: auto;" >
+</a>
+</div> 
